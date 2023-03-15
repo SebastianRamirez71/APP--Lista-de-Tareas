@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;1,700&family=Graduate&family=Gruppo&family=Hind:wght@300&family=Josefin+Sans:wght@200&family=Kanit:wght@200&family=Lexend+Deca:wght@700&family=Oswald:wght@300&family=Raleway:wght@300;400&family=Shantell+Sans:wght@300&family=Sono:wght@300&family=Tilt+Prism&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#titulo {
+  font-family: "Sono", sans-serif;
+  text-align: center;
+  padding: 10px;
+  color: #24271b;
+}
+
+body{
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.day {
+  padding: 15px;
+  text-align: center;
+}
+
+.day img {
+  height: 65px;
+  width: 65px;
+}
+
+.input {
+  font-family: 'Kanit', sans-serif;
+  color: white;
+  margin-bottom: 8px;
+  max-width: 170px;
+  height: 40px;
+  background-color: #05060f3c;
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: border-color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
+    background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
+}
+
+.input:hover,
+.input:focus,
+.input-group:hover .input {
+  outline: none;
+  border-color: #05060f;
+}
+
+.input-group:hover .label,
+.input:focus {
+  color: #ffffff;
+}
+
+button {
+  width: fit-content;
+  min-width: 100px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2.5px solid #e0e1e4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: "Poppins", sans-serif;
+}
+
+button:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#vacio {
+  color: red;
+}
+
+.tarea {
+  text-align: center;
+  justify-content: center;
+}
+
+.tarea h2 {
+  font-family: 'Kanit', sans-serif;
+  padding: 5px;
+  font-size: 22px;
+}
+
+.tareas {
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.list-tareas {
+  font-size: 14px;
+  padding: 20px;
+}
+
+.ctarea {
+  text-align: left;
+  font-size: 18px;
+  font-family: 'Kanit', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 2px;
+  background: rgba(98, 88, 88, 0.273);
+  border-radius: 5px;
+  padding: 15px;
+  width: 350px;
+  
+  
+}
+.fecha-general {
+  font-family: "Josefin Sans", sans-serif;
+  color: #f5dd01;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+
+@media (min-width:550px) {
+  .fecha-general{
+    justify-content: space-around;
+  }
+  .ctarea {
+    width: 400px;
+  }
+  
+  
+
+}
