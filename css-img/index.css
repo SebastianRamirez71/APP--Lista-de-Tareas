@@ -57,7 +57,7 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   color: #ffffff;
 }
 
-button {
+.agregar {
   width: fit-content;
   min-width: 100px;
   height: 45px;
@@ -72,12 +72,12 @@ button {
   font-family: "Poppins", sans-serif;
 }
 
-button:hover {
+.agregar:hover {
   background-color: #f2f2f2;
   box-shadow: 0px 0px 20px -18px;
 }
 
-button:active {
+.agregar:active {
   transform: scale(0.95);
 }
 
@@ -112,16 +112,14 @@ button:active {
   padding: 20px;
 }
 
-.ctarea {
+.Ctarea {
   text-align: left;
   font-size: 18px;
   font-family: 'Kanit', sans-serif;
-  display: flex;
+  
   justify-content: space-between;
-  margin: 10px 2px;
-  background: rgba(98, 88, 88, 0.273);
-  border-radius: 5px;
-  padding: 15px;
+  
+  
   width: 350px;
   
   
@@ -134,6 +132,46 @@ button:active {
   font-size: 18px;
 }
 
+.eliminar {
+  font-size: 15px;
+  border: none;
+  background-color: rgb(255, 0, 89);
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform ease 300ms;
+  padding: 8px;
+}
+
+.completada {
+  font-size: 15px;
+  border: none;
+  background-color: rgb(0, 136, 255);
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform ease 300ms;
+  padding: 8px;
+}
+
+.eliminar:hover{
+  transition: ease-in-out(0,0,0.58,1);
+}
+
+.item-tarea{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: rgba(98, 88, 88, 0.273);
+  margin: 12px;
+  width: 350px;
+  border-radius: 5px;
+}
+
+.btns{
+  display: flex;
+  gap: 0.5rem;
+}
 
 @media (min-width:550px) {
   .fecha-general{

@@ -50,6 +50,7 @@ function validarForm(e) {
 
   const objTarea = {
     tarea: tarea,
+    estado:false,
     id: Date.now(), // es el tiempo (milisegundos) que pasan desde 1970 hasta el momento donde se agregue la tarea
   };
 
@@ -75,8 +76,16 @@ function mostrarDatos() {
   tareas.forEach((element) => {
     const listaTareas = document.createElement("div");
     listaTareas.classList.add("item-tarea");
-
-    listaTareas.innerHTML = `<p class="ctarea" tarea-id="${element.id}">${element.tarea}</p>`;
+    listaTareas.innerHTML = `
+    ${element.estado ? ( // if item.estado es true (true = tarea completada)
+        `<p class = "Ctarea">${element.tarea}</p>`
+    ) : (
+        `<p class = "Ctarea">${element.tarea}</p>`
+    )}
+        <div class="btns">
+            <button data-id="${element.id}" class="eliminar">X</button>
+            <button data-id="${element.id}" class="completada">✔</button>
+        </div>`
 
     tareasNodo.appendChild(listaTareas);
   });
