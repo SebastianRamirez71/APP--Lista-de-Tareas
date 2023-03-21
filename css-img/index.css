@@ -4,14 +4,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 #titulo {
   font-family: "Sono", sans-serif;
   text-align: center;
   padding: 10px;
   color: #24271b;
 }
-
 body{
   background: #bdc3c7;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
@@ -23,7 +21,6 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   padding: 15px;
   text-align: center;
 }
-
 .day img {
   height: 65px;
   width: 65px;
@@ -44,14 +41,12 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
     color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,
     background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;
 }
-
 .input:hover,
 .input:focus,
 .input-group:hover .input {
   outline: none;
   border-color: #05060f;
 }
-
 .input-group:hover .label,
 .input:focus {
   color: #ffffff;
@@ -71,12 +66,10 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   user-select: none;
   font-family: "Poppins", sans-serif;
 }
-
 .agregar:hover {
   background-color: #f2f2f2;
   box-shadow: 0px 0px 20px -18px;
 }
-
 .agregar:active {
   transform: scale(0.95);
 }
@@ -89,13 +82,11 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   text-align: center;
   justify-content: center;
 }
-
 .tarea h2 {
   font-family: 'Kanit', sans-serif;
   padding: 5px;
   font-size: 22px;
 }
-
 .tareas {
   color: white;
   padding: 10px;
@@ -116,13 +107,8 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   text-align: left;
   font-size: 18px;
   font-family: 'Kanit', sans-serif;
-  
   justify-content: space-between;
-  
-  
   width: 350px;
-  
-  
 }
 .fecha-general {
   font-family: "Josefin Sans", sans-serif;
@@ -131,7 +117,6 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   justify-content: space-between;
   font-size: 18px;
 }
-
 .eliminar {
   font-size: 15px;
   border: none;
@@ -142,7 +127,6 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   transition: transform ease 300ms;
   padding: 8px;
 }
-
 .completada {
   font-size: 15px;
   border: none;
@@ -153,11 +137,12 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   transition: transform ease 300ms;
   padding: 8px;
 }
-
 .eliminar:hover{
-  transition: ease-in-out(0,0,0.58,1);
+  transform: scale(1.1);
 }
-
+.completada:hover{
+  transform: scale(1.1);
+}
 .item-tarea{
   display: flex;
   align-items: center;
@@ -173,6 +158,16 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   gap: 0.5rem;
 }
 
+.completar{
+  text-decoration-line: line-through;
+  text-align: left;
+  font-size: 18px;
+  font-family: 'Kanit', sans-serif;
+  justify-content: space-between;
+  width: 350px;
+  color: #70B044;
+}
+
 @media (min-width:550px) {
   .fecha-general{
     justify-content: space-around;
@@ -180,7 +175,4 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
   .ctarea {
     width: 400px;
   }
-  
-  
-
 }

@@ -4,7 +4,8 @@ const date = document.getElementById("fecha");
 const dia = document.getElementById("dia");
 const tareasNodo = document.querySelector(".tareas");
 
-
+const borrarTarea = document.querySelector(".tareas");
+const tareaCompletada = document.querySelector(".tareas");
 //   Contenido de fechas
     var today = new Date();
     var fecha = today.toLocaleDateString({
@@ -16,25 +17,20 @@ const tareasNodo = document.querySelector(".tareas");
     diaFecha = today.toLocaleDateString("es-MX", { weekday: "long" });
     date.textContent = fecha;
     dia.textContent = diaFecha;
-//
 let tareas = [];
-
 
 function eventos() {
   form.addEventListener("submit", validarForm);
+  borrarTarea.addEventListener("click", eliminarTarea);
+  tareaCompletada.addEventListener("click", completarTarea);
+
   document.addEventListener('DOMContentLoaded', () => {
     let LS = JSON.parse(localStorage.getItem("tareas")) || [];
     tareas = LS;
     mostrarDatos();
   })
-
-  
 }
-
-
-
 eventos();
-
 
 function validarForm(e) {
   e.preventDefault();
@@ -55,30 +51,19 @@ function validarForm(e) {
   };
 
   tareas.push(objTarea)
-
-
-  
   form.reset();
   mostrarDatos();
-  
 }
 
 function mostrarDatos() {
   limpiarDatos();
-
-  if (tareas.length === "") {
-    const mensaje = document.createElement("h5");
-    mensaje.textContent = "Sin Tareas";
-    tareas.appendChild(mensaje);
-    return;
-  }
 
   tareas.forEach((element) => {
     const listaTareas = document.createElement("div");
     listaTareas.classList.add("item-tarea");
     listaTareas.innerHTML = `
     ${element.estado ? ( // if item.estado es true (true = tarea completada)
-        `<p class = "Ctarea">${element.tarea}</p>`
+        `<p class ="completar">${element.tarea}</p>`
     ) : (
         `<p class = "Ctarea">${element.tarea}</p>`
     )}
@@ -89,17 +74,41 @@ function mostrarDatos() {
 
     tareasNodo.appendChild(listaTareas);
   });
-
-
     localStorage.setItem('tareas', JSON.stringify(tareas))
-  
 }
-
-
-
-  
-
 
 function limpiarDatos() {
   tareasNodo.innerHTML = "";
 }
+
+
+function eliminarTarea(e) {
+  if(e.target.classList.contains("eliminar")){
+    var element = e.target
+    const tareaID = (element.getAttribute("data-id"));
+    console.log(tareaID)
+    const tareaBorrar = tareas.filter((element) => element.id !== Number(tareaID))
+    tareas = tareaBorrar
+    mostrarDatos()
+  }
+}
+
+function completarTarea(e) {
+  if(e.target.classList.contains("completada")){
+    const tareaID = Number(e.target.getAttribute("data-id"));
+    console.log(tareaID)
+
+    const newTask = tareas.map((element) => {   
+      if(element.id === tareaID){
+        element.estado = !element.estado;
+        return element;
+        
+      } else {
+        return element
+      }
+    })
+
+    mostrarDatos()
+  }
+}
+
